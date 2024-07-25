@@ -16,6 +16,7 @@ describe("When Form is created", () => {
   describe("and a click is triggered on the submit button", () => {
     it("the success message is displayed", async () => {
       render(<Home />);
+      setTimeout(async () => {
       fireEvent(
         await screen.findByText("Envoyer"),
         new MouseEvent("click", {
@@ -23,7 +24,6 @@ describe("When Form is created", () => {
           bubbles: true,
         })
       );
-          setTimeout(() => {
 
              screen.findByText("En cours");
              screen.findByText("Message envoyé !");
